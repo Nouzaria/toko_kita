@@ -1,10 +1,44 @@
+<?php
+    include "service/database.php";
+    session_start();
+
+    $login_message = "";
+
+    if (isset($_SESSION["is_login"])) {
+        header("location: dashboard.php");
+    }
+
+    if(isset($_POST['login'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $hash_password = hash("sha256", $password);
+
+        $sql = "SELECT * FROM users WHERE username='$username' AND password='$hash_password'";
+        
+        $result = $db->query($sql);
+
+        if($result->num_rows > 0) {
+            $data = $result->fetch_assoc();
+            $_SESSION["username"] = $data["username"];
+            $_SESSION["is_login"] = true;
+
+            header("location: dashboard.php");
+
+        }else {
+            $login_message = "Account can't be found";
+        }
+        $db->close();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Next Level Login & Registration  Form | Coding Stella</title>
+    <title>Toko Kita | Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="login_styles.css">
+    <link rel="stylesheet" href="loginout_styles.css">
 </head>
 <body>
     <div class="container">
