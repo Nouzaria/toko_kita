@@ -17,49 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toko Kita | Dashboard</title>
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap'><link rel="stylesheet" href="stylesheet/style_dashboard.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #007bff;
-            color: white;
-        }
-        .menu, .action-buttons {
-            margin-bottom: 20px;
-        }
-        .action-buttons a {
-            margin-right: 10px;
-            padding: 5px 10px;
-            color: white;
-            background-color: #28a745;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .action-buttons a.delete {
-            background-color: #dc3545;
-        }
-        a:hover {
-            opacity: 0.8;
-        }
-    </style>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap'>
+    <link rel="stylesheet" href="stylesheet/style_dashboard.css">
+    <link rel="stylesheet" href="stylesheet/style_dashboard-menu.css">
 </head>
 <body>
 

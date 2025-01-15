@@ -1,0 +1,76 @@
+<?php
+    include "service/database.php";
+
+    $admin_register_message = "";
+
+    if (isset($_POST["register_admin"])) {
+        $username   = $_POST['username'];
+        $email      = $_POST['email'];
+        $password   = $_POST['password'];
+        $phone      = $_POST['phone'];
+        $store_name = $_POST['store_name'];
+        $address    = $_POST['address'];
+
+        try {
+            $sql = "INSERT INTO admins (username, email, password, phone, store_name, address) VALUES ('$username', '$email', '$hash_password', '$phone', '$store_name', $address')";
+   
+            if ($db->query($sql)) {
+                $admin_register_message = "daftar akun berhasil";
+            } else {
+                $admin_register_message = "daftar akun gagal";
+            }
+        } catch (mysqli_sql_exception) {
+            $admin_register_message = "Username sudah digunakan";
+        }
+        $db->close();
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Kita | Register</title>
+    <link rel="stylesheet" href="stylesheet/style.css">
+</head>
+<body>
+    <div class="wrapper">
+    <i><?= $admin_register_message ?></i>
+
+    <form action="register_admin.php" method="POST">
+    <h2>Sign Up Account</h2>
+        <div class="input-field">
+            <input type="text" name="username"/>
+            <label>Create your username</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="email"/>
+            <label>Enter your email</label>
+        </div>
+        <div class="input-field">
+            <input type="password" name="password"/>
+            <label>Create your password</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="phone"/>
+            <label>Enter your phone number</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="store_name"/>
+            <label>Enter your store name</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="address"/>
+            <label>Enter your store address</label>
+        </div>
+        <button type="submit" name="register_admin">Sign Up Now</button>
+        <div class="register">
+        <p>Already a member? <a href="login.php?page=login">Log In</a></p>
+        <p>Back to Homepage? <a href="index.php?page=home">Main Menu</a></p>
+      </div>
+    </form>
+    </div>
+
+</body>
+</html>

@@ -37,54 +37,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Data Barang</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        form {
-            max-width: 500px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"], input[type="date"], select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        a {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: #007bff;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="stylesheet/style_barang.css">
 </head>
 <body>
 
